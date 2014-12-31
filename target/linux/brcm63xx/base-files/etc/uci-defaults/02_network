@@ -62,8 +62,8 @@ V2500V_BB)
 96358VW2)
 	ucidef_set_interfaces_lan_wan "eth1.1" "eth1.2"
 	ucidef_add_switch "eth1" "1" "1"
-	ucidef_add_switch_vlan "eth1.1" "1" "0 1 2 4 5t"
-	ucidef_add_switch_vlan "eth1.2" "1" "3 5t"
+	ucidef_add_switch_vlan "eth1" "1" "0 1 2 4 5t"
+	ucidef_add_switch_vlan "eth1" "2" "3 5t"
 	;;
 
 AW4139 |\
