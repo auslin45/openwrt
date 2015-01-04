@@ -88,8 +88,8 @@ o.rmempty = false
 
 o = s:option(Value, "tunnel_port", translate("UDP Local Port"))
 o.datatype = "port"
-o.default = 5353
-o.placeholder = 5353
+o.default = 5300
+o.placeholder = 5300
 
 o = s:option(Value, "tunnel_forward",
 	translate("Forwarding Tunnel"),
@@ -101,23 +101,16 @@ o.placeholder = "8.8.4.4:53"
 s = m:section(TypedSection, "shadowsocks", translate("LAN Access Control"))
 s.anonymous = true
 
-o = s:option(ListValue, "ac_mode", translate("Access Control Mode"))
+o = s:option(ListValue, "lan_ac_mode", translate("Access Control Mode"))
 o:value("0", translate("Off"))
 o:value("1", translate("Whitelist"))
 o:value("2", translate("Blacklist"))
 o.default = 0
 o.rmempty = false
 
-o = s:option(DynamicList, "accept_ip",
-	translate("LAN IP Address"),
-	translate("The traffic of these IP will be transited through shadowsocks"))
+o = s:option(DynamicList, "lan_ac_ip", translate("LAN IP Address"))
 o.datatype = "ipaddr"
-o:depends("ac_mode", 1)
-
-o = s:option(Value, "reject_ip",
-	translate("LAN IP Address"),
-	translate("The traffic of this IP won't be transited through shadowsocks"))
-o.datatype = "ipaddr"
-o:depends("ac_mode", 2)
+o:depends("lan_ac_mode", 1)
+o:depends("lan_ac_mode", 2)
 
 return m
