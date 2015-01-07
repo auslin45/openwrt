@@ -14,6 +14,9 @@ case "$board_name" in
 96328dg2x2)
 	ucidef_set_led_usbdev "usb" "USB" "A4001N:green:usb" "1-1"
 	;;
+96358VW2)
+	ucidef_set_led_usbdev "usb" "USB" "RG100A-AA:green:usb" "1-1"
+	;;
 'F@ST2704V2')
 	ucidef_set_led_usbdev "usb" "USB" "F@ST2704V2:green:usb" "1-1"
 	;;
