@@ -1,7 +1,7 @@
 
 config listen 'listen'
 	option enabled '0'
-	option ip '0.0.0.0'
+	option ip '192.168.1.1'
 	option port '8087'
 	option username ''
 	option password ''
@@ -22,7 +22,7 @@ config gae 'gae'
 
 config pac 'pac'
 	option enabled '1'
-	option ip '0.0.0.0'
+	option ip '192.168.1.1'
 	option port '8086'
 	option gfwlist 'http://autoproxy-gfwlist.googlecode.com/svn/trunk/gfwlist.txt'
 	option adblock 'http://adblock-chinalist.googlecode.com/svn/trunk/adblock.txt'
