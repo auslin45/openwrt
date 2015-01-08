@@ -51,13 +51,6 @@ define Build/Compile
 endef
 
 define Package/openwrt-dist-luci/postinst
-#!/bin/sh
-if [ -z "$${IPKG_INSTROOT}" ]; then
-	( . /etc/uci-defaults/luci-$(1) ) && rm -f /etc/uci-defaults/luci-$(1)
-	chmod 755 /etc/init.d/$(1) >/dev/null 2>&1
-	/etc/init.d/$(1) enable >/dev/null 2>&1
-fi
-exit 0
 endef
 
 Package/luci-app-redsocks2/postinst = $(call Package/openwrt-dist-luci/postinst,redsocks2)
